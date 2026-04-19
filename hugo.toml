@@ -1,5 +1,5 @@
-baseurl = "https://ros-tw.github.io"
-title = "ROS Taiwan"
+baseurl = "https://tw-robo.github.io/"
+title = "Taiwan Robotics"
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
@@ -16,9 +16,9 @@ pagerSize = 20
 style = "github-dark"
 
 [params]
-  author = "ROS Taiwan"
-  info = "Robot Operating System (ROS) Taiwan Group"
-  description = "Robot Operating System (ROS) Taiwan Group"
+  author = "Taiwan Robotics"
+  info = "Taiwan Robotics Group"
+  description = "Taiwan Robotics Group"
   keywords = "ros,robotics,taiwan"
   avatarurl = "images/avatar.png"
   #gravatar = "john.doe@example.com"
