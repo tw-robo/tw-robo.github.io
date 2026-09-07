@@ -18,14 +18,14 @@ enableRobotsTXT = true
 [languages]
   [languages.zh-tw]
     label = "中文"
-    locale = "zh-TW"
+    languageCode = "zh-TW"
     weight = 1
     title = "台灣機器人社群"
     [languages.zh-tw.params]
       description = "台灣機器人社群，交流機器人技術、研究與產業經驗。"
   [languages.en]
     label = "English"
-    locale = "en-US"
+    languageCode = "en-US"
     weight = 2
     title = "Taiwan Robotics Community"
     [languages.en.params]

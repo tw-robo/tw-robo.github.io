@@ -32,7 +32,7 @@
 <section class="recent-events shell section-pad">
   <div class="section-heading horizontal reveal"><div><p class="eyebrow"><span></span>{{ if $isEn }}RECENT EVENTS{{ else }}活動紀錄{{ end }}</p><h2>{{ if $isEn }}Recent gatherings{{ else }}最近辦過的活動{{ end }}</h2></div><a class="button button-outline" href="{{ "/events/" | relLangURL }}">{{ if $isEn }}See the full archive{{ else }}查看完整記錄{{ end }} →</a></div>
   <div class="event-preview-list">
-    {{ range first 3 hugo.Data.events.events }}
+    {{ range first 3 site.Data.events.events }}
     <a class="event-row reveal" href="{{ .url }}" target="_blank" rel="noopener"><time>{{ .date }}</time><div><span>{{ if $isEn }}{{ .type_label_en }} · {{ .city_en }}{{ else }}{{ .type_label }} · {{ .city }}{{ end }}</span><h3>{{ if $isEn }}{{ .title_en }}{{ else }}{{ .title }}{{ end }}</h3></div><span class="event-arrow" aria-hidden="true">↗</span></a>
     {{ end }}
   </div>

@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $isEn := eq .Site.Language.Lang "en" }}
-{{ $upcoming := hugo.Data.events.upcoming }}
+{{ $upcoming := site.Data.events.upcoming }}
 <section class="page-hero with-art shell">
   <div><p class="eyebrow reveal"><span></span>{{ if $isEn }}EVENTS{{ else }}活動{{ end }}</p><h1 class="reveal">{{ if $isEn }}Meetups, workshops, and the annual conference{{ else }}小聚、工作坊，還有每年的開發者年會{{ end }}</h1><p class="page-lead reveal delay-1">{{ if $isEn }}Start with our most recent gathering, then browse earlier events. Photos, videos, slides, and registration pages stay on their original platforms.{{ else }}先看最近一場，也可以往回找以前辦過的活動。照片、影片、簡報和報名頁仍放在原本的平台。{{ end }}</p></div>
   <figure class="page-art reveal delay-1"><img src="{{ "images/community-illustration.webp" | relURL }}" width="1200" height="800" alt="{{ if $isEn }}A hand-drawn robotics meetup{{ else }}機器人社群小聚的手繪插畫{{ end }}"></figure>
@@ -22,7 +22,7 @@
 <section class="archive shell section-pad">
   <div class="archive-head"><div><p class="eyebrow"><span></span>{{ if $isEn }}ARCHIVE{{ else }}歷年記錄{{ end }}</p><h2>{{ if $isEn }}Past events{{ else }}過去活動{{ end }}</h2></div><div class="filters" role="group" aria-label="{{ if $isEn }}Filter event type{{ else }}活動類型篩選{{ end }}"><button class="filter is-active" type="button" data-filter="all" aria-pressed="true">{{ if $isEn }}All{{ else }}全部{{ end }}</button><button class="filter" type="button" data-filter="meetup" aria-pressed="false">{{ if $isEn }}Meetups{{ else }}小聚{{ end }}</button><button class="filter" type="button" data-filter="partner" aria-pressed="false">{{ if $isEn }}Partner events{{ else }}合作場次{{ end }}</button><button class="filter" type="button" data-filter="annual" aria-pressed="false">{{ if $isEn }}Conferences{{ else }}年度活動{{ end }}</button></div></div>
   <div class="timeline" data-timeline>
-    {{ range hugo.Data.events.events }}
+    {{ range site.Data.events.events }}
     <article class="timeline-item reveal" data-event-type="{{ .type }}"><div class="timeline-date"><strong>{{ .date }}</strong><span>{{ if $isEn }}{{ .city_en }}{{ else }}{{ .city }}{{ end }}</span></div><div class="timeline-dot" aria-hidden="true"></div><div class="timeline-card"><span class="event-kind">{{ if $isEn }}{{ .type_label_en }}{{ else }}{{ .type_label }}{{ end }}</span><h3>{{ if $isEn }}{{ .title_en }}{{ else }}{{ .title }}{{ end }}</h3><p>{{ if $isEn }}{{ .summary_en }}{{ else }}{{ .summary }}{{ end }}</p><div class="tag-list">{{ range .tags }}<span>{{ . }}</span>{{ end }}</div><a href="{{ .url }}" target="_blank" rel="noopener">{{ if $isEn }}Open event page{{ else }}開啟活動頁{{ end }} <span>↗</span></a></div></article>
     {{ end }}
   </div>

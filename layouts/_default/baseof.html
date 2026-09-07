@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ .Site.Language.Locale | default .Site.Language.Lang }}">
+<html lang="{{ .Site.Language.LanguageCode }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +18,7 @@
   {{ $style := resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
   <link rel="icon" href="{{ "images/avatar.png" | relURL }}">
-  {{ range .AllTranslations }}<link rel="alternate" hreflang="{{ .Language.Locale }}" href="{{ .Permalink }}">{{ end }}
+  {{ range .AllTranslations }}<link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}">{{ end }}
 </head>
 <body class="{{ if .IsHome }}home{{ else }}inner-page{{ end }}">
   <a class="skip-link" href="#main">{{ i18n "skip_content" }}</a>
