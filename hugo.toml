@@ -1,37 +1,76 @@
-baseURL = "https://tw-robo.github.io/"
-title = "台灣機器人社群"
+baseurl = "https://tw-robo.github.io/"
+title = "Taiwan Robotics"
 theme = "hugo-coder"
-defaultContentLanguage = "zh-tw"
-defaultContentLanguageInSubdir = false
-enableRobotsTXT = true
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+
+[pagination]
+pagerSize = 20
+
+# [services]
+# [services.disqus]
+# shortname = "yourdiscussshortname"
+
+[markup.highlight]
+style = "github-dark"
 
 [params]
-  email = "tw.robo.cmty@gmail.com"
-  discord = "https://discord.gg/m8F8Vt6v3e"
-  facebook = "https://www.facebook.com/groups/ros.taiwan"
-  meetup = "https://www.meetup.com/taipei-robotics-meetup-group/"
-  luma = "https://luma.com/tw-robotics"
-  github = "https://github.com/tw-robo/tw-robo.github.io"
-  eventSubmit = "https://github.com/tw-robo/tw-robo.github.io/issues/new?title=%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84%EF%BD%9C%E8%AB%8B%E5%A1%AB%E6%B4%BB%E5%8B%95%E5%90%8D%E7%A8%B1&body=%23%23%20%E6%B4%BB%E5%8B%95%E8%B3%87%E8%A8%8A%0A-%20%E6%B4%BB%E5%8B%95%E5%90%8D%E7%A8%B1%EF%BC%9A%0A-%20%E6%97%A5%E6%9C%9F%EF%BC%9A%0A-%20%E5%9C%B0%E9%BB%9E%EF%BC%9A%0A-%20%E5%A0%B1%E5%90%8D%E6%88%96%E7%B4%80%E9%8C%84%E9%80%A3%E7%B5%90%EF%BC%9A%0A-%20%E7%B0%A1%E4%BB%8B%EF%BC%9A%0A%0A%3E%20%E8%AB%8B%E5%8F%AA%E6%8F%90%E4%BA%A4%E5%A4%96%E9%83%A8%E9%80%A3%E7%B5%90%EF%BC%8C%E4%B8%8D%E8%A6%81%E4%B8%8A%E5%82%B3%E5%A4%A7%E5%9E%8B%E5%BD%B1%E7%89%87%E6%88%96%E7%9B%B8%E7%89%87%E6%AA%94%E3%80%82"
-  eventSubmitEn = "https://github.com/tw-robo/tw-robo.github.io/issues/new?title=Event%20record%20submission&body=%23%23%20Event%20information%0A-%20Event%20name%3A%0A-%20Date%3A%0A-%20Location%3A%0A-%20Registration%20or%20record%20link%3A%0A-%20Short%20description%3A%0A%0A%3E%20Please%20submit%20external%20links%20only.%20Do%20not%20upload%20large%20photo%20or%20video%20files."
+  author = "Taiwan Robotics"
+  info = "Taiwan Robotics Group"
+  description = "Taiwan Robotics Group"
+  keywords = "ros,robotics,taiwan"
+  avatarurl = "images/avatar.png"
+  #gravatar = "john.doe@example.com"
 
-[languages]
-  [languages.zh-tw]
-    label = "中文"
-    locale = "zh-TW"
-    weight = 1
-    title = "台灣機器人社群"
-    [languages.zh-tw.params]
-      description = "台灣機器人社群，交流機器人技術、研究與產業經驗。"
-  [languages.en]
-    label = "English"
-    locale = "en-US"
-    weight = 2
-    title = "Taiwan Robotics Community"
-    [languages.en.params]
-      description = "Taiwan's community for conversations about robotics technology, research, and industry."
+  faviconSVG = "/img/favicon.svg"
+  favicon_32 = "/img/favicon-32x32.png"
+  favicon_16 = "/img/favicon-16x16.png"
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+  since = 2018
+
+  enableTwemoji = true
+
+  colorScheme = "auto"
+  hidecolorschemetoggle = false
+
+  # customCSS = ["css/custom.css"]
+  # customSCSS = ["scss/custom.scss"]
+  # customJS = ["js/custom.js"]
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+# Social links
+[[params.social]]
+  name = "Discord"
+  icon = "fa-brands fa-discord fa-2x"
+  weight = 1
+  url = "https://discord.gg/m8F8Vt6v3e"
+[[params.social]]
+  name = "Facebook"
+  icon = "fa-brands fa-facebook fa-2x"
+  weight = 2
+  url = "https://www.facebook.com/groups/ros.taiwan"
+# [[params.social]]
+#   name = "Github"
+#   icon = "fa-brands fa-github fa-2x"
+#   weight = 3
+#   url = "https://github.com/ros-tw/"
+
+# Menu links
+[[menu.main]]
+  name = "About"
+  weight = 1
+  url = "about/"
+[[menu.main]]
+  name = "Events"
+  weight = 2
+  url  = "events/"
+[[menu.main]]
+  name = "Contact"
+  weight = 3
+  url  = "contact/"
