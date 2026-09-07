@@ -1,0 +1,4 @@
+{{ define "main" }}
+{{ $isEn := eq .Site.Language.Lang "en" }}
+<section class="not-found shell"><p class="eyebrow"><span></span>404</p><h1>{{ if $isEn }}This page is not here.{{ else }}找不到這個頁面。{{ end }}</h1><p>{{ if $isEn }}It may have moved or the link may be outdated.{{ else }}頁面可能搬家了，或是連結已經失效。{{ end }}</p><a class="button button-primary" href="{{ "/" | relLangURL }}">{{ if $isEn }}Back to home{{ else }}回到首頁{{ end }} →</a></section>
+{{ end }}

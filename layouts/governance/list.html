@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{ $isEn := eq .Site.Language.Lang "en" }}
+<section class="community-story community-story-first">
+  <div class="shell community-story-grid">
+    <div class="story-lead reveal"><p class="eyebrow light"><span></span>{{ if $isEn }}WHAT WE DO{{ else }}常在做什麼{{ end }}</p><h2>{{ if $isEn }}Talk through projects, watch demos, and take problems apart together.{{ else }}聊專案、看 demo，也一起把問題拆開來。{{ end }}</h2></div>
+    <div class="story-note reveal delay-1"><p>{{ if $isEn }}Software, mechanisms, sensing, control, simulation, and deployment all show up at the same table. Ask the person across from you and keep the discussion going.{{ else }}軟體、機構、感測、控制、模擬和部署都在同一張桌上。想到什麼就問，聊不完下次繼續。{{ end }}</p></div>
+    <div class="story-pieces reveal">
+      <article><b>{{ if $isEn }}Meetups{{ else }}小聚{{ end }}</b><p>{{ if $isEn }}Casual evenings for project updates, demos, and questions.{{ else }}晚上找個地方坐下來，分享近況、demo 和手上的問題。{{ end }}</p></article>
+      <article><b>{{ if $isEn }}Workshops{{ else }}工作坊{{ end }}</b><p>{{ if $isEn }}Focused sessions where people learn a tool or technique by using it.{{ else }}挑一個工具或技術，留一段完整時間一起操作。{{ end }}</p></article>
+      <article><b>{{ if $isEn }}Developer conference{{ else }}開發者年會{{ end }}</b><p>{{ if $isEn }}A larger annual gathering for talks, discussions, and meeting people across the field.{{ else }}一年一次的大型活動，安排分享、分組討論，也讓不同領域的人碰面。{{ end }}</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="who-comes">
+  <div class="shell section-pad">
+    <div class="section-heading horizontal reveal"><div><p class="eyebrow"><span></span>{{ if $isEn }}WHO COMES{{ else }}你會遇到誰{{ end }}</p><h2>{{ if $isEn }}People who build, study, design, and use robots{{ else }}做機器人、研究機器人，也把機器人用在現場的人{{ end }}</h2></div></div>
+    <div class="people-cloud reveal"><span>ROS Developer</span><span>Robot Learning</span><span>Mechanical Design</span><span>Controls</span><span>Computer Vision</span><span>Researcher</span><span>Maker</span><span>Product Design</span><span>Manufacturing</span><span>{{ if $isEn }}Curious newcomer{{ else }}剛開始接觸的人{{ end }}</span></div>
+    <div class="charter-note reveal">
+      <p>{{ if $isEn }}The community charter is public for anyone who wants to understand the operating details.{{ else }}如果想了解社群的提案、財務與決策方式，可以閱讀公開的共治章程。{{ end }}</p>
+      <a href="{{ if $isEn }}/governance/full-charter/{{ else }}{{ "/governance/full-charter/" | relLangURL }}{{ end }}">{{ if $isEn }}Read the Chinese charter{{ else }}閱讀共治章程{{ end }} →</a>
+    </div>
+  </div>
+</section>
+{{ end }}

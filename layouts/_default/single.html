@@ -1,0 +1,4 @@
+{{ define "main" }}
+{{ $isEn := eq .Site.Language.Lang "en" }}
+<article class="document shell"><header class="document-head"><p class="eyebrow"><span></span>GOVERNANCE DOCUMENT</p><h1>{{ .Title }}</h1><p>{{ if $isEn }}Public draft. Changes are tracked on GitHub.{{ else }}公開草案，修訂記錄以 GitHub 正本為準。{{ end }}</p></header><div class="prose">{{ .Content }}</div></article>
+{{ end }}

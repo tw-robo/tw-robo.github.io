@@ -1,0 +1,53 @@
+{{ define "main" }}
+{{ $isEn := eq .Site.Language.Lang "en" }}
+<section class="hero">
+  <div class="hero-copy shell reveal">
+    <p class="eyebrow"><span></span>{{ if $isEn }}Community since 2018{{ else }}社群始於 2018 年{{ end }}</p>
+    <h1>{{ if $isEn }}<span>Come explore robotics.</span><span>Join the conversation.</span>{{ else }}<span>來一起探索、</span><span>一起討論機器人。</span>{{ end }}</h1>
+    <p class="hero-lead">{{ if $isEn }}Whether you work in research, build products, or simply want to meet more people in robotics, come join the conversation.{{ else }}不論你在做研究、開發產品，或只是想多認識機器人領域的朋友，都很歡迎過來聊聊。{{ end }}</p>
+    <div class="hero-actions">
+      <a class="button hero-event-link" href="{{ "/events/" | relLangURL }}">{{ if $isEn }}View events{{ else }}查看活動{{ end }} <span aria-hidden="true">→</span></a>
+      <a class="button button-text" href="{{ .Site.Params.discord }}" target="_blank" rel="noopener">{{ if $isEn }}Join the conversation{{ else }}加入 Discord 聊聊{{ end }} <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="hero-note" aria-label="{{ if $isEn }}Community values{{ else }}社群特色{{ end }}">
+      <span>{{ if $isEn }}Independent{{ else }}跨組織{{ end }}</span><span>{{ if $isEn }}Hands-on{{ else }}重視實作{{ end }}</span><span>{{ if $isEn }}Open to newcomers{{ else }}新手也歡迎{{ end }}</span>
+    </div>
+  </div>
+  <figure class="hero-poster reveal delay-1">
+    <img src="{{ "images/community-illustration.webp" | relURL }}" width="1200" height="800" alt="{{ if $isEn }}A hand-drawn group gathered around a robot arm{{ else }}一群人圍著機械手臂討論的手繪插畫{{ end }}" fetchpriority="high">
+    <figcaption><span>01</span>{{ if $isEn }}Come as you are. There is always something to talk about.{{ else }}帶著最近想聊的事情來就好。{{ end }}</figcaption>
+  </figure>
+</section>
+
+<section class="about-block section-pad">
+  <div class="shell about-grid">
+    <div class="about-title reveal"><h2>{{ if $isEn }}Come talk robotics at the next meetup.{{ else }}下次小聚，來聊機器人。{{ end }}</h2></div>
+    <div class="about-copy reveal delay-1">
+      <p class="big-copy">{{ if $isEn }}Bring whatever is on your mind. Share it or simply listen.{{ else }}帶著最近想聊的題目來。分享或先聽聽都可以。{{ end }}</p>
+      <a class="text-link" href="{{ "/governance/" | relLangURL }}">{{ if $isEn }}Meet the community{{ else }}認識社群{{ end }} <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="recent-events shell section-pad">
+  <div class="section-heading horizontal reveal"><div><p class="eyebrow"><span></span>{{ if $isEn }}RECENT EVENTS{{ else }}活動紀錄{{ end }}</p><h2>{{ if $isEn }}Recent gatherings{{ else }}最近辦過的活動{{ end }}</h2></div><a class="button button-outline" href="{{ "/events/" | relLangURL }}">{{ if $isEn }}See the full archive{{ else }}查看完整記錄{{ end }} →</a></div>
+  <div class="event-preview-list">
+    {{ range first 3 hugo.Data.events.events }}
+    <a class="event-row reveal" href="{{ .url }}" target="_blank" rel="noopener"><time>{{ .date }}</time><div><span>{{ if $isEn }}{{ .type_label_en }} · {{ .city_en }}{{ else }}{{ .type_label }} · {{ .city }}{{ end }}</span><h3>{{ if $isEn }}{{ .title_en }}{{ else }}{{ .title }}{{ end }}</h3></div><span class="event-arrow" aria-hidden="true">↗</span></a>
+    {{ end }}
+  </div>
+</section>
+
+<section class="meetup-life">
+  <div class="shell meetup-life-grid">
+    <figure class="meetup-life-art reveal"><img src="{{ "images/community-meetup.webp" | relURL }}" width="1200" height="800" alt="{{ if $isEn }}A hand-drawn robotics meetup gathered around a mobile robot{{ else }}大家圍著移動機器人交流的手繪插畫{{ end }}" loading="lazy"></figure>
+    <div class="meetup-life-copy reveal delay-1">
+      <p class="eyebrow light"><span></span>{{ if $isEn }}AT A MEETUP{{ else }}小聚現場{{ end }}</p>
+      <h2>{{ if $isEn }}What do people talk about at a meetup?{{ else }}小聚裡都在聊什麼？{{ end }}</h2>
+      <p>{{ if $isEn }}Common topics include ROS, mechanisms, sensing, control, and Robot Learning. People also compare notes on tools they have used.{{ else }}現場常聊 ROS、機構、感測、控制和 Robot Learning。大家也會交換使用工具的經驗。{{ end }}</p>
+      <a class="button button-paper" href="{{ "/governance/" | relLangURL }}">{{ if $isEn }}Meet the community{{ else }}多認識我們一點{{ end }} →</a>
+    </div>
+  </div>
+</section>
+
+{{ end }}
