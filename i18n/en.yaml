@@ -16,6 +16,8 @@
   translation: "Events"
 - id: nav_governance
   translation: "About"
+- id: nav_committee_members
+  translation: "Committee"
 - id: nav_join
   translation: "Join Discord"
 - id: footer_title

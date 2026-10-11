@@ -16,6 +16,8 @@
   translation: "活動"
 - id: nav_governance
   translation: "關於社群"
+- id: nav_committee_members
+  translation: "委員會成員"
 - id: nav_join
   translation: "加入 Discord"
 - id: footer_title
